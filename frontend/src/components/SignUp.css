@@ -1,0 +1,54 @@
+/* SignUpForm.css */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+  }
+  
+  .login-form {
+    max-width: 300px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .form-group button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-switch {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .form-switch span {
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .form-switch span:hover {
+    text-decoration: underline;
+  }
+  

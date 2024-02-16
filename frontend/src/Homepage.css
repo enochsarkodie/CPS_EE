@@ -1,0 +1,108 @@
+body{
+    position: relative;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2980b9;
+    background-image: url(./images/flowers.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.home{
+ 
+}
+.Homepage{
+   display: flex;
+   padding: 10px;
+   font-size: large;
+   font-weight: bold;
+   align-items: center;
+   justify-content: space-between;
+   
+}
+.logo{
+   font-size: 30px;
+}
+
+.settings{
+   padding: 1px;
+   gap: 25px;
+   display: flex;
+   text-decoration: none;
+   color:#333;
+   transition: color 0.3s ease;
+   
+     
+}
+.settings:hover{
+    color:#333333;
+}
+a{
+   text-decoration: none;
+   color: inherit;
+}
+
+.init{
+   display: flex;
+   gap: 15px;
+   
+   
+}
+button{
+   font-size: 20px;
+   font-weight: bold;
+   text-decoration: none;
+   border: none;
+   background-color:#2980b9;
+   border-radius: 12px;
+   padding: 8px 18px;
+   text-align: center;
+   cursor: pointer;
+   color:aliceblue;
+   
+   transition: background-color 0.3s ease;
+   
+
+      
+}
+button:hover{
+   background-color:inherit;
+   color:lightskyblue
+}
+.loginbtn{
+   background-color: none;
+}
+
+.describe{
+   display: flex;
+   padding: 40px;
+   padding-left: 490px ;
+   
+
+
+}
+h2{ 
+ 
+   padding: 20px;
+   font-size: 40px;
+   padding-left: 60px;
+   color:darkcyan ;
+  
+}
+.get-started{
+   text-align: center;
+   padding-left:150px;
+   font-size: 30px;
+}
+p{
+  
+   font-size: 20px;
+   padding-left: 550px;  
+   
+}
+.paragraphs{
+   
+   padding-left: 210pxpx ;
+   padding-top: 1px;
+   
+}
