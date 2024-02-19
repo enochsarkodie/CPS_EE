@@ -6,8 +6,8 @@ import Login from './components/Login';
 import {Route,Router,Routes,Link} from 'react-router-dom'
 
 
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Admin from './pages/Admin/Admin';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
     
     <Route path ={'/login'} element={<Login/> }></Route>
     <Route path ={'/signup'} element={  <SignUp/>}></Route>
+    <Route path ={'/dashboard/admin'} element={<Admin/>}></Route>
    </Routes>
 
   )
