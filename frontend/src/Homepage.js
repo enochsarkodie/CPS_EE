@@ -11,8 +11,8 @@ const Homepage= ()=>{
         <div className="logo">TheSchedular</div>
         <div className="settings">
          <Link to="/features" >Features</Link>
-         <a href="">About</a>
-         <a href="">Contact Us</a>
+         <Link to="/about" >About</Link>
+         <Link to="/contactus" >Contact Us</Link>
         </div>
         <div className="init">
              <div className="loginbtn"> 
