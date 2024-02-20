@@ -4,6 +4,8 @@ import Homepage from './Homepage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import {Route,Router,Routes,Link} from 'react-router-dom'
+import Features from './Features';
+import LoginAdmin from './components/LoginAdmin';
 
 
 
@@ -22,6 +24,9 @@ function App() {
     
     <Route path ={'/login'} element={<Login/> }></Route>
     <Route path ={'/signup'} element={  <SignUp/>}></Route>
+    <Route path ={'/features'} element={<Features/>}></Route>
+   <Route path={'/adminDashboard'} element={<adminDashboard/>}></Route>
+   <Route path ={'/loginAdmin'} element={<LoginAdmin/> }></Route>
    </Routes>
 
   )

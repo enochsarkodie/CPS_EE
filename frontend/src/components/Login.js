@@ -1,5 +1,6 @@
 import React from "react";
 import './login.css'
+import { Link } from "react-router-dom";
 
 
 const Login = ( )=> {
@@ -16,10 +17,7 @@ const Login = ( )=> {
 
               <form>
                 <h1>Login</h1>
-                <div className="form-group">
-                  <label htmlFor="name">Name:</label>
-                  <input type="text" id="name" name="name" placeholder="Your name" required />
-                </div>
+               
         
                 <div className="form-group">
                   <label htmlFor="email">Email:</label>
@@ -30,11 +28,14 @@ const Login = ( )=> {
                 <div className="form-group">
                   <label htmlFor="password">Password:</label>
                   <input type="password" id="password" name="password" placeholder="Your password" required />
-       -        </div>
+                </div>
 
 
                 <div className="form-group">
-                  <button type="submit">Submit</button>
+                 <Link to='/adminDashboard'> <button type="submit">Submit</button></Link>
+                </div>
+                <div>
+                  Don't have an account? <Link to='/signup'><span className="sup">Sign Up</span></Link>
                 </div>
               </form>
             </div>
