@@ -1,16 +1,11 @@
 export class Journey {
-    id;
-    pickUpLocation;
-    destination;
-    typeOfJourney;
-    timeOfDeparture;
 
-    constructor(initializer) {
-        if (!initializer) return;
-        if (initializer.id) this.id = initializer.id;
-        if (initializer.pickUpLocation) this.pickUpLocation = initializer.pickUpLocation;
-        if (initializer.destination) this.destination = initializer.destination;
-        if (initializer.typeOfJourney) this.typeOfJourney = initializer.typeOfJourney;
-        if (initializer.timeOfDeparture) this.timeOfDeparture = initializer.timeOfDeparture;
+    constructor( id,pickUpLocation, destination, typeOfJourney, dateOfDeparture, timeOfDeparture){
+                this.id = id;
+                this.pickUpLocation = pickUpLocation
+                this.destination = destination;
+                this.typeOfJourney = typeOfJourney;
+                this.dateOfDeparture = dateOfDeparture;
+                this.timeOfDeparture = timeOfDeparture
+        }
     }
-}

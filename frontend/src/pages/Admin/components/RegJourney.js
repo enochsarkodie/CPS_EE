@@ -7,13 +7,22 @@ import "./RegJourney.css"
 const RegJourney = () => {
 
   const[journey, setJourney] = useState(new Journey())
-  let timeString;
-  let dateString;
+  const[timeOfDeparture, setTimeOfDeparture] = useState("")
+  const [errors, setErrors] = useState({
+    pickUpLocation: "",
+    destination: "",
+    typeOfJourney: "",
+    dateOfDeparture: "",
+    timeOfDeparture: ""
+
+})
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('New Drver Created')
+    console.log('New Journey Created')
     console.log(journey)
+    setErrors(() => validate(journey));
+    console.error(errors)
   }
 
   const handleChange = (event) => {
@@ -23,15 +32,51 @@ const RegJourney = () => {
     if (type === "number"){
       updatedValue = Number(updatedValue)
     }
+  
+
     const change = {
-      [id] : value,
+      [id] : updatedValue,
     }
-    let updatedDriver;
+
+    let updatedJourney;
         setJourney((p) => {
-            updatedDriver = new Journey({...p, ...change})
-            return updatedDriver;
+            updatedJourney = new Journey({...p, ...change})
+            return updatedJourney;
         });
+        // console.log(journey)
+
+    
+      
   }
+
+
+  function validate(journey) {
+    let error =  {
+      pickUpLocation: "",
+      destination: "",
+      typeOfJourney: "",
+      dateOfDeparture: "",
+      timeOfDeparture: ""
+};
+    
+    if (!journey.pickUpLocation) {
+        error.pickUpLocation = "Depature Location is required";
+    }
+    if (!journey.destination) {
+        error.destination = "Destination is required";
+    }
+    if (!journey.typeOfJourney) {
+        error.typeOfJourney = "Type of Journey is required";
+    }
+    if (!journey.dateOfDeparture) {
+        error.dateOfDeparture = "Date of Departure is required.";
+    }
+    if (!journey.timeOfDeparture) {
+      error.timeOfDeparture = "Time of Departure is required.";
+  }
+
+    return error;
+}
   
   return (
         <form className=""
@@ -59,8 +104,10 @@ const RegJourney = () => {
   <div className="col">
     <label htmlFor="typeOfJourney" className="form-label">Type Of Journey</label>
     <select 
-      className="form-control" 
-      id="typeOfJourney">
+      id="typeOfJourney"
+      className="form-control">
+        <option value="">
+        </option>
         <option value={journey.typeOfJourney}>
           Pick Off
         </option>
@@ -72,20 +119,20 @@ const RegJourney = () => {
   </div>
   <div className='row justify-content-between w-50'>
   <div className="col">
-    <label htmlFor="date" className="form-label">Date</label>
+    <label htmlFor="dateOfDeparture" className="form-label">Date</label>
     <input 
       type="date"
       className="form-control" 
-      id="date"
-      value={dateString}/>
+      id="dateOfDeparture"
+      value={journey.dateOfDeparture}/>
   </div>
     <div className="col">
-        <label htmlFor="time" className="form-label">Time: </label>
+        <label htmlFor="timeOfDeparture" className="form-label">Time: </label>
         <input 
           type="time" 
           className="form-control" 
-          id="time"
-          value={timeString}/>
+          id="timeOfDeparture"
+          value={journey.timeOfDeparture}/>
     </div>  
   </div>
   
