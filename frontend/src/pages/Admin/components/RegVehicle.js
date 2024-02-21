@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Vehicle } from '../../props/Vehicle';
-import { ListOfVehicles } from './VehicleList';
+import { initialVehicles } from './VehicleList';
 
 import { useNavigate } from "react-router-dom"
 
@@ -23,7 +23,7 @@ const RegVehicle = () => {
   const handleSubmit = (event) => {
     event.preventDefault(); 
     console.log("vehicle data:", vehicle);
-    ListOfVehicles.push(vehicle);
+    initialVehicles.push(vehicle);
     navigate('/vehicle')
 
   }

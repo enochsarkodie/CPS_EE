@@ -3,7 +3,7 @@ import { Journey } from '../../props/Journey'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
-export const ListOfJourney = [
+export const initialJourneys = [
     new Journey({
         id: 1,
         pickUpLocation: "Amasaman",
@@ -13,7 +13,7 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     }),
     new Journey({
-        id: 1,
+        id: 2,
         pickUpLocation: "Amasaman",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
@@ -21,7 +21,7 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     }),
     new Journey({
-        id: 1,
+        id: 3,
         pickUpLocation: "Amasaman",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
@@ -29,7 +29,7 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     }),
     new Journey({
-        id: 1,
+        id: 4,
         pickUpLocation: "Amasaman",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
@@ -37,7 +37,7 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     }),
     new Journey({
-        id: 1,
+        id: 5,
         pickUpLocation: "Amasaman",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
@@ -45,7 +45,7 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     }),
     new Journey({
-        id: 1,
+        id: 6,
         pickUpLocation: "Amasaman",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
@@ -53,7 +53,7 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     }),
     new Journey({
-        id: 1,
+        id: 7,
         pickUpLocation: "Amasaman",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
@@ -61,7 +61,11 @@ export const ListOfJourney = [
         timeOfDeparture: "12:32",
     })
 ]
-const JourneyList = () => {
+const JourneyList = ({listOfJourneys, del}) => {
+
+  const handledelte = (id) => {
+    del(id);
+ }
   return (
     <table class="table">
   <thead>
@@ -76,7 +80,7 @@ const JourneyList = () => {
     </tr>
   </thead>
   <tbody>
-    {ListOfJourney.map((journey) => (
+    {listOfJourneys ? listOfJourneys.map((journey) => (
         <tr key={journey.id}>
             <th scope="row">{journey.id}</th>
             <td>{journey.pickUpLocation}</td>
@@ -87,11 +91,11 @@ const JourneyList = () => {
             <td>
                 <div className='d-sm-flex'>
                     <button className='btn btn-primary'><FontAwesomeIcon icon={faPenToSquare}/></button>
-                    <button className='btn btn-primary'><FontAwesomeIcon icon={faTrashCan}/></button>
+                    <button className='btn btn-primary' onClick={() => handledelte(journey.id)}><FontAwesomeIcon icon={faTrashCan}/></button>
                 </div>
             </td>
          </tr>
-        ))}
+        )) : <div>NO List Available</div>}
   </tbody>
 </table>
   )

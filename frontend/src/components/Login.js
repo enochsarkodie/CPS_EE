@@ -32,7 +32,7 @@ const Login = ( )=> {
 
 
                 <div className="form-group">
-                 <Link to='/Dashboard'> <button type="submit">Submit</button></Link>
+                 <Link to='/dashboard/employee'> <button type="submit">Submit</button></Link>
                 </div>
                 <div>
                   Don't have an account? <Link to='/signup'><span className="sup">Sign Up</span></Link>

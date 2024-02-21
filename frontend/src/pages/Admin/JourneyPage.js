@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './Admin.css'
 import Navbar from './components/Navbar'
-import JourneyList from './components/JourneyList'
+import JourneyList, {initialJourneys} from './components/JourneyList'
 const JourneyPage = () => {
+    const [journeys, setJourneys] = useState([])
+    const [loading, setLoading] = useState(false);
+    const disp = true
+    useEffect (() => {
+        setLoading(true);
+        setJourneys(initialJourneys);
+        setLoading(false);
+    }, [])
+
+    const deleteItem = (id) =>
+    {
+      const updatedJourneys = journeys.filter(journey => journey.id !== id);
+      setJourneys(updatedJourneys);
+    }
+
   return (
     <div className='container-fluid'>
         <div className='d-flex row'>
@@ -18,7 +33,13 @@ const JourneyPage = () => {
                         </button>
                     </Link>
                 </div>
-            <JourneyList/>
+                {loading && (
+            <div className='center-page'>
+                <span className='spinner primary'></span>
+                <p>Loading...</p>
+            </div>
+                )}
+            {(journeys !== 0) && <JourneyList listOfJourneys={journeys} del={deleteItem} display={disp}/>}
             </div>
         </div>
     </div>

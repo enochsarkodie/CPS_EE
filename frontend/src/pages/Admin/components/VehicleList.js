@@ -3,7 +3,7 @@ import { Vehicle } from '../../props/Vehicle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
-export const ListOfVehicles = [
+export const initialVehicles = [
   new Vehicle({
     id: 1,
     vehicleNumber: "as1234",
@@ -40,7 +40,11 @@ export const ListOfVehicles = [
     noOfSeats: 43
   })
 ]
-const VehicleList = () => {
+const VehicleList = ({listOfVehicles, del}) => {
+
+  const handledelte = (id) => {
+    del(id);
+ }
   return (
     <table className="table">
   <thead>
@@ -52,7 +56,7 @@ const VehicleList = () => {
     </tr>
   </thead>
   <tbody>
-    {ListOfVehicles.map((vehicle) => (
+    {listOfVehicles ? listOfVehicles.map((vehicle) => (
               <tr key={vehicle.id}>
                 <th scope="row">{vehicle.id}</th>
                 <td>{vehicle.vehicleNumber}</td>
@@ -60,11 +64,11 @@ const VehicleList = () => {
                 <td>
                   <div className='d-sm-flex'>
                     <button className='btn btn-primary'><FontAwesomeIcon icon={faPenToSquare}/></button>
-                    <button className='btn btn-primary'><FontAwesomeIcon icon={faTrashCan}/></button>
+                    <button className='btn btn-primary' onClick={() => handledelte(vehicle.id)} ><FontAwesomeIcon icon={faTrashCan}/></button>
                   </div>
                 </td>
             </tr>
-          ))}
+          )): <div>No List Available</div>}
   </tbody>
 </table>
   )

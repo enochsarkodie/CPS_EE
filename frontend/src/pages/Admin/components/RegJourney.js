@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Journey } from '../../props/Journey';
 import { useNavigate } from "react-router-dom"
-import { ListOfJourney } from './JourneyList';
+import { initialJourneys } from './JourneyList';
 
 const initializer = {
   id: null,
@@ -21,7 +21,7 @@ const RegJourney = () => {
     event.preventDefault(); 
     console.log("Journey data:", journey);
 
-    ListOfJourney.push(journey);
+    initialJourneys.push(journey);
     navigate('/journey')
   }
 

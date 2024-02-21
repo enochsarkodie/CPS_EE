@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './Admin.css'
 import Navbar from './components/Navbar'
 import DriverList, { initialDrivers } from './components/DriverList'
 
 
-
 const DriverPage = () => {
+    const [drivers, setDrivers] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const [drivers, setDrivers] = useState(initialDrivers);
+    useEffect (() => {
+        setLoading(true);
+        setDrivers(initialDrivers)
+        setLoading(false)
+    },[])
 
     const deleteItem = (id) =>
     {
@@ -30,7 +35,14 @@ const DriverPage = () => {
                         </button>
                     </div>
                 </Link>
-            <DriverList listOfDrivers={drivers} del={deleteItem}/>
+
+                {loading && (
+            <div className='center-page'>
+                <span className='spinner primary'></span>
+                <p>Loading...</p>
+            </div>
+        )}
+            {(drivers !== 0) && <DriverList listOfDrivers={drivers} del={deleteItem}/>}
             </div>
         </div>
     </div>

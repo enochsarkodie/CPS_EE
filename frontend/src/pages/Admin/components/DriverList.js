@@ -96,7 +96,7 @@ const handledelte = (id) => {
           </tr>
         </thead>
         <tbody>
-          {listOfDrivers.map((driver) => (
+          {listOfDrivers ? (listOfDrivers.map((driver) => (
               <tr key={driver.id}>
               <th scope="row">{driver.id}</th>
               <td>{driver.firstName}</td>
@@ -113,10 +113,11 @@ const handledelte = (id) => {
                 </div>
               </td>
             </tr>
-          ))}
+          ))) : <div>No List Available</div>}
         </tbody>
   </table>
   )
 }
+
 
 export default DriverList
