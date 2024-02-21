@@ -18,21 +18,21 @@ const Navbar = () => {
             <hr></hr>
             <ul className='nav-items'>
                 <div className='nav-items-main'>
-                    <Link>
+                    <Link to="/profile">
                         <li className='nav-item'>Profile</li>
                     </Link>
-                    <Link>
+                    <Link to="/vehicle">
                         <li className='nav-item'>Vehicles</li>
                     </Link>
-                    <Link>
+                    <Link to="/driver">
                         <li className='nav-item'>Driver</li>
                     </Link>
-                    <Link>
+                    <Link to="/journey">
                         <li className='nav-item'>Pickup/Drop-offs</li>
                     </Link>
                 </div>
                 <div className='nav-items-footer'>
-                    <Link>
+                    <Link to="/loginAdmin">
                         <li className='nav-item'>logout</li>
                     </Link>
                 </div>

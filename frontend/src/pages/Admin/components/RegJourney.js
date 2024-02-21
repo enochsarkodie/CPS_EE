@@ -1,82 +1,36 @@
 import React, { useState } from 'react'
 import { Journey } from '../../props/Journey';
-import "./RegJourney.css"
+import { useNavigate } from "react-router-dom"
+import { ListOfJourney } from './JourneyList';
 
-
+const initializer = {
+  id: null,
+  pickUpLocation: '',
+  destination: '',
+  typeOfJourney: '',
+  dateOfDeparture: null,
+  timeOfDeparture: null
+};
 
 const RegJourney = () => {
 
-  const[journey, setJourney] = useState(new Journey())
-  const[timeOfDeparture, setTimeOfDeparture] = useState("")
-  const [errors, setErrors] = useState({
-    pickUpLocation: "",
-    destination: "",
-    typeOfJourney: "",
-    dateOfDeparture: "",
-    timeOfDeparture: ""
-
-})
+  const[journey, setJourney] = useState(new Journey(initializer))
   
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('New Journey Created')
-    console.log(journey)
-    setErrors(() => validate(journey));
-    console.error(errors)
+    event.preventDefault(); 
+    console.log("Journey data:", journey);
+
+    ListOfJourney.push(journey);
+    navigate('/journey')
   }
 
   const handleChange = (event) => {
-    const {type, id, value, checked } = event.target;
-
-    let updatedValue = value;
-    if (type === "number"){
-      updatedValue = Number(updatedValue)
-    }
-  
-
-    const change = {
-      [id] : updatedValue,
-    }
-
-    let updatedJourney;
-        setJourney((p) => {
-            updatedJourney = new Journey({...p, ...change})
-            return updatedJourney;
-        });
-        // console.log(journey)
-
-    
-      
+    const { id, value } = event.target;
+    setJourney({ ...journey, [id]: value });
   }
 
 
-  function validate(journey) {
-    let error =  {
-      pickUpLocation: "",
-      destination: "",
-      typeOfJourney: "",
-      dateOfDeparture: "",
-      timeOfDeparture: ""
-};
-    
-    if (!journey.pickUpLocation) {
-        error.pickUpLocation = "Depature Location is required";
-    }
-    if (!journey.destination) {
-        error.destination = "Destination is required";
-    }
-    if (!journey.typeOfJourney) {
-        error.typeOfJourney = "Type of Journey is required";
-    }
-    if (!journey.dateOfDeparture) {
-        error.dateOfDeparture = "Date of Departure is required.";
-    }
-    if (!journey.timeOfDeparture) {
-      error.timeOfDeparture = "Time of Departure is required.";
-  }
-
-    return error;
-}
   
   return (
         <form className=""
@@ -88,16 +42,14 @@ const RegJourney = () => {
         <input 
           type="text" 
           className="form-control" 
-          id="pickUpLocation" 
-          value={journey.pickUpLocation}/>
+          id="pickUpLocation" />
     </div>
     <div className="col">
         <label htmlFor="destination" className="form-label">Destination</label>
         <input 
           type="text" 
           className="form-control" 
-          id="destination"
-          value={journey.destination}/>
+          id="destination"/>
     </div>
 </div>
   <div className='row justify-content-between w-50'>
@@ -108,10 +60,10 @@ const RegJourney = () => {
       className="form-control">
         <option value="">
         </option>
-        <option value={journey.typeOfJourney}>
+        <option>
           Pick Off
         </option>
-        <option value={journey.typeOfJourney}>
+        <option>
           Drop Off
         </option>
       </select>
@@ -123,16 +75,14 @@ const RegJourney = () => {
     <input 
       type="date"
       className="form-control" 
-      id="dateOfDeparture"
-      value={journey.dateOfDeparture}/>
+      id="dateOfDeparture"/>
   </div>
     <div className="col">
         <label htmlFor="timeOfDeparture" className="form-label">Time: </label>
         <input 
           type="time" 
           className="form-control" 
-          id="timeOfDeparture"
-          value={journey.timeOfDeparture}/>
+          id="timeOfDeparture"/>
     </div>  
   </div>
   

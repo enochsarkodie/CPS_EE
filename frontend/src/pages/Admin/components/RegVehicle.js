@@ -1,19 +1,60 @@
-import React from 'react'
-import "./RegVehicle.css" 
+import React, { useState } from 'react'
+import { Vehicle } from '../../props/Vehicle';
+import { ListOfVehicles } from './VehicleList';
+
+import { useNavigate } from "react-router-dom"
+
+
+
+const initializer = {
+  id: null,
+  vehicleNumber: '',
+  noOfSeats: '',
+};
+
+
+
+
 
 const RegVehicle = () => {
+  const[vehicle, setVehicle] = useState(new Vehicle(initializer))
+
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+    console.log("vehicle data:", vehicle);
+    ListOfVehicles.push(vehicle);
+    navigate('/vehicle')
+
+  }
+  
+  
+  
+  const handleChange = (event) => {
+  
+    const { id, value } = event.target;
+    setVehicle({ ...vehicle, [id]: value });
+  }
   return (
-        <form className="">
-<div className='row justify-content-between w-50'>
-    <div className="col-4">
-        <label for="firstName" className="form-label">Vehicle Number</label>
-        <input type="text" className="form-control" id="inputEmail4"></input>
+        <form className=""
+        onSubmit={handleSubmit}
+        onChange={handleChange}>
+<div className='row justify-content-between'>
+    <div className="col">
+        <label htmlFor="firstName" className="form-label">Vehicle Number</label>
+        <input 
+          type="text"
+          className="form-control" 
+          id="vehicleNumber"/>
     </div>
 </div>
   
   <div className="col-4 w-25">
-    <label for="tagNumber" className="form-label">MaxNo Of Seats: </label>
-    <input type="text" className="form-control" id="tagNumber" placeholder="ADM130"></input>
+    <label htmlFor="noOfSeats" className="form-label">Max No Of Seats: </label>
+    <input 
+      type="number" 
+      className="form-control" 
+      id="noOfSeats"/>
   </div>
  
   <div className="d-flex align-items-end justify-content-center mt-4 w-25">

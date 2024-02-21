@@ -7,3 +7,9 @@ form  {
     justify-content: center;
 
 }
+
+.btn-action{
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+}
