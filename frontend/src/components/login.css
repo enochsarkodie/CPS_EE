@@ -1,8 +1,7 @@
-.body {
-    position: relative;
-    background-image: none;
-}
+
+
 .form-container {
+  
     position: center;
     transform: -50% -50%;
     margin: auto;
@@ -42,8 +41,12 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    align-items: center;
     
     
+  }
+  .sup{
+    color:rgb(14, 175, 228);
   }
 
 
