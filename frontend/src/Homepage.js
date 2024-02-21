@@ -5,20 +5,21 @@ import {Router, Link} from 'react-router-dom'
 
 const Homepage= ()=>{
     return (
-        
+        <main>
         <div className="home">
        <div className="Homepage">
         <div className="logo">TheSchedular</div>
         <div className="settings">
-         <a href="/features" >Features</a>
-         <a href="">About</a>
-         <a href="">Contact Us</a>
+         <Link to="/features" >Features</Link>
+         <Link to="/about" >About</Link>
+         <Link to="/contactus" >Contact Us</Link>
         </div>
         <div className="init">
              <div className="loginbtn"> 
              <Link to='/login'> <button>Login</button>
              </Link></div>
            <Link to='/signup'> <button>Sign Up</button></Link>
+           <Link to='/loginAdmin'><button>Admin</button></Link>
         </div>
          </div>
          <div className="describe">
@@ -28,7 +29,7 @@ const Homepage= ()=>{
 
          
         <div className="get-started"> <Link to='/signup'><button>Get Started</button></Link></div>
-       </div>
+       </div></main>
        
       
     );
