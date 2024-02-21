@@ -1,16 +1,11 @@
-export class Driver {
-    id;
-    pickUpLocation;
-    destination;
-    typeofJourney;
-    timeOfDeparture;
-
-    constructor(initializer) {
-        if (!initializer) return;
-        if (initializer.id) this.id = initializer.id;
-        if (initializer.pickUpLocation) this.pickUpLocation = initializer.pickUpLocation;
-        if (initializer.destination) this.destination = initializer.destination;
-        if (initializer.typeofJourney) this.typeofJourney = initializer.typeofJourney;
-        if (initializer.timeOfDeparture) this.timeOfDeparture = initializer.timeOfDeparture;
+export class Journey {
+    
+    constructor(inititializer){
+        this.id = inititializer.id;
+        this.pickUpLocation = inititializer.pickUpLocation;
+        this.destination = inititializer.destination;
+        this.typeOfJourney = inititializer.typeOfJourney;
+        this.dateOfDeparture = inititializer.dateOfDeparture;
+        this.timeOfDeparture = inititializer.timeOfDeparture;
+        }
     }
-}
