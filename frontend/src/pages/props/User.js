@@ -1,4 +1,4 @@
-export class Driver {
+export class User{
     id;
     firstName;
     lastName;
@@ -15,6 +15,7 @@ export class Driver {
         if (initializer.firstName) this.firstName = initializer.firstName;
         if (initializer.lastName) this.lastName = initializer.lastName;
         if (initializer.gender) this.gender = initializer.gender;
+        if (initializer.age) this.age = initializer.age;
         if (initializer.employeeNumber) this.employeeNumber = initializer.employeeNumber;
         if (initializer.phoneNumber) this.phoneNumber = initializer.phoneNumber;
         if (initializer.department) this.department = initializer.department;
