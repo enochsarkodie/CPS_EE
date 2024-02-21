@@ -61,12 +61,14 @@ export const initialJourneys = [
         timeOfDeparture: "12:32",
     })
 ]
-const JourneyList = ({listOfJourneys, del}) => {
+const JourneyList = ({listOfJourneys, del, display}) => {
 
   const handledelte = (id) => {
     del(id);
  }
   return (
+    <div>
+      <h2>LIST AVAILABLE JOURNEYS</h2>
     <table class="table">
   <thead>
     <tr>
@@ -76,7 +78,7 @@ const JourneyList = ({listOfJourneys, del}) => {
       <th scope="col">Type Of Journey</th>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
-      <th scope="col">Action</th>
+      {display &&  <th scope="col">Action</th>}
     </tr>
   </thead>
   <tbody>
@@ -88,16 +90,18 @@ const JourneyList = ({listOfJourneys, del}) => {
             <td>{journey.typeOfJourney}</td>
             <td>{journey.dateOfDeparture}</td>
             <td>{journey.timeOfDeparture}</td>
+            {display && 
             <td>
                 <div className='d-sm-flex'>
                     <button className='btn btn-primary'><FontAwesomeIcon icon={faPenToSquare}/></button>
                     <button className='btn btn-primary' onClick={() => handledelte(journey.id)}><FontAwesomeIcon icon={faTrashCan}/></button>
                 </div>
-            </td>
+            </td>}
          </tr>
         )) : <div>NO List Available</div>}
   </tbody>
 </table>
+</div>
   )
 }
 

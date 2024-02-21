@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Homepage from './Homepage';
 import SignUp from './components/SignUp';
@@ -18,8 +18,20 @@ import JourneyPage from './pages/Admin/JourneyPage';
 import VehiclePage from './pages/Admin/VehiclePage';
 import DriverPage from './pages/Admin/DriverPage';
 import EmployeeDashboard from './pages/Employee/EmployeeDashboard';
-
+import { initialDrivers } from './pages/Admin/components/DriverList';
+import { initialJourneys } from './pages/Admin/components/JourneyList';
+import { initialVehicles } from './pages/Admin/components/VehicleList';
+import BookJourney from './pages/Employee/components/BookJouney';
+import EmployeeBooked from './pages/Employee/components/Booked';
 function App() {
+  useEffect(() => {
+    localStorage.setItem('listofJourneys', JSON.stringify(initialJourneys));
+    localStorage.setItem('listofDrivers', JSON.stringify(initialDrivers));
+    localStorage.setItem('listofVehicles', JSON.stringify(initialVehicles))
+
+    console.log("Hello");
+  }, [])
+  
   return (
     <Routes>
     
@@ -44,6 +56,8 @@ function App() {
     <Route path = {'/journey'} element={<JourneyPage/>}></Route>
 
     <Route path = {'/dashboard/employee'} element={<EmployeeDashboard/>}></Route>
+    <Route path = {'/journey/booking'} element={<BookJourney/>}></Route>
+    <Route path = {'/journey/booked'} element={<EmployeeBooked/>}></Route>
 
     
 

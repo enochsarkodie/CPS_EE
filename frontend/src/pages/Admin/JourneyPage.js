@@ -4,14 +4,19 @@ import './Admin.css'
 import Navbar from './components/Navbar'
 import JourneyList, {initialJourneys} from './components/JourneyList'
 const JourneyPage = () => {
-    const [journeys, setJourneys] = useState([])
+    const [journeys, setJourneys] = useState()
     const [loading, setLoading] = useState(false);
     const disp = true
     useEffect (() => {
+        if (journeys)
+            localStorage.setItem('listofJourneys', JSON.stringify(journeys));
+        else
+            localStorage.setItem('listofJourneys', JSON.stringify(initialJourneys));
         setLoading(true);
-        setJourneys(initialJourneys);
+        const journeysList = JSON.parse(localStorage.getItem('listofJourneys'))
+        setJourneys(journeysList);
         setLoading(false);
-    }, [])
+    }, [journeys])
 
     const deleteItem = (id) =>
     {

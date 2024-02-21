@@ -21,8 +21,11 @@ const Navbar = () => {
                     <Link to="/profile">
                         <li className='nav-item'>Profile</li>
                     </Link>
-                    <Link to="">
+                    <Link to="/journey/booking">
                         <li className='nav-item'>Book A Journey</li>
+                    </Link>
+                    <Link to='/journey/booking'>
+                        <li className='nav-item'>BOOK Journey</li>
                     </Link>
                 </div>
                 <div className='nav-items-footer'>

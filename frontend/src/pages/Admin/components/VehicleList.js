@@ -52,7 +52,7 @@ const VehicleList = ({listOfVehicles, del}) => {
       <th scope="col">#</th>
       <th scope="col">Vehicle Number</th>
       <th scope="col">No of Seats</th>
-      <th scope="col">Action</th>
+     <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
