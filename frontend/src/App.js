@@ -53,9 +53,7 @@ function App() {
    <Route path={'/adminDashboard'} element={<Admin/>}></Route>
    <Route path ={'/loginAdmin'} element={<LoginAdmin/> }></Route>
    <Route path={'/Dashboard'} element={<Dashboard/>}></Route>
-    <Route path={'/AdminDashboard'} element={<AdminDashboard/>}></Route>
-    <Route path ={'/loginAdmin'} element={<LoginAdmin/> }></Route>
-    <Route path={'/Dashboard'} element={<Dashboard/>}></Route>
+    
    </Routes>
 
   )
