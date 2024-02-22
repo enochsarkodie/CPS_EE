@@ -7,34 +7,34 @@ export const initialJourneys = [
     new Journey({
         id: 1,
         pickUpLocation: "Amasaman",
-        destination: "Antoban",
-        typeOfJourney: "PICK OFF",
-        dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
+        destination: "4th Junction",
+        typeOfJourney: "PICK UP",
+        dateOfDeparture: "01-21-2024",
+        timeOfDeparture: "7:00",
     }),
     new Journey({
         id: 2,
         pickUpLocation: "Amasaman",
-        destination: "Antoban",
+        destination: "Work premises",
         typeOfJourney: "PICK OFF",
         dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
+        timeOfDeparture: "10:00",
     }),
     new Journey({
         id: 3,
-        pickUpLocation: "Amasaman",
+        pickUpLocation: "2nd Junction",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
         dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
+        timeOfDeparture: "12:00",
     }),
     new Journey({
         id: 4,
-        pickUpLocation: "Amasaman",
+        pickUpLocation: "WorkPlace",
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
-        dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
+        dateOfDeparture: "01-31-2024",
+        timeOfDeparture: "14:00",
     }),
     new Journey({
         id: 5,
@@ -42,24 +42,9 @@ export const initialJourneys = [
         destination: "Antoban",
         typeOfJourney: "PICK OFF",
         dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
+        timeOfDeparture: "16:00",
     }),
-    new Journey({
-        id: 6,
-        pickUpLocation: "Amasaman",
-        destination: "Antoban",
-        typeOfJourney: "PICK OFF",
-        dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
-    }),
-    new Journey({
-        id: 7,
-        pickUpLocation: "Amasaman",
-        destination: "Antoban",
-        typeOfJourney: "PICK OFF",
-        dateOfDeparture: "12-23-2024",
-        timeOfDeparture: "12:32",
-    })
+  
 ]
 const JourneyList = ({listOfJourneys, del, display}) => {
 
