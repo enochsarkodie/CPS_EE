@@ -12,7 +12,7 @@ const EmployeeDashboard = ()=>{
         const journeysList = JSON.parse(localStorage.getItem('listofJourneys'))
         setJourneys(journeysList);
         setLoading(false);
-    }, [journeys])
+    }, [])
 
     return (
         <div className='container-fluid'> 

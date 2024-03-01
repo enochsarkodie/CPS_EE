@@ -11,6 +11,7 @@ const Login = ( )=> {
   const handleLoginClick = () =>{
     const storedEmail = localStorage.getItem("email");
     const storedPassword = localStorage.getItem("password");
+    console.log(`koko ${storedEmail} ooj`)
     if (email.current.value === storedEmail && password.current.value === storedPassword){
       navigate('/dashboard/employee');
     }else{

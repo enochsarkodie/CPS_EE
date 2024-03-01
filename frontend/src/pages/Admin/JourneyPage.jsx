@@ -8,20 +8,17 @@ const JourneyPage = () => {
     const [loading, setLoading] = useState(false);
     const disp = true
     useEffect (() => {
-        if (journeys)
-            localStorage.setItem('listofJourneys', JSON.stringify(journeys));
-        else
-            localStorage.setItem('listofJourneys', JSON.stringify(initialJourneys));
         setLoading(true);
         const journeysList = JSON.parse(localStorage.getItem('listofJourneys'))
         setJourneys(journeysList);
         setLoading(false);
-    }, [journeys])
+    }, [])
 
     const deleteItem = (id) =>
     {
       const updatedJourneys = journeys.filter(journey => journey.id !== id);
       setJourneys(updatedJourneys);
+      localStorage.setItem('listofJourneys', JSON.stringify(journeys));
     }
 
   return (
