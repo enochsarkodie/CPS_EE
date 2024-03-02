@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {  } from "react";
 import Navbar from "./Navbar";
 
-const EmployeeBooked = (props)=>{
+const EmployeeBooked = ()=>{
     const journey = JSON.parse(localStorage.getItem('employeeBooking'))
     return (
         <div className='container-fluid'> 
