@@ -24,7 +24,7 @@ const EmployeeBooked = ()=>{
 </div>
   <div className='row justify-content-between w-50'>
   <div className="col">
-    <label htmlFor="dateOfDeparture" className="form-label">Date</label>
+    <label type="date" htmlFor="dateOfDeparture" className="form-label">Date</label>
     <div>{journey.dateOfDeparture}</div>
 
   </div>
